@@ -3,6 +3,10 @@ contrib/admintools/splashimage.c
 Unicode/data/*.txt
 Unicode/data/*.zip
 
+# macOS packaging artifacts
+*.dmg
+*.app
+
 .vscode/
 .vs/
 

@@ -36,6 +36,15 @@
 
 long uc_strcmp(const unichar_t *str1,const char *str2) {
     long ch1, ch2;
+    
+    /* Handle NULL pointer cases */
+    if ( str1==NULL && str2==NULL )
+        return 0;
+    if ( str1==NULL )
+        return -1;
+    if ( str2==NULL )
+        return 1;
+    
     for (;;) {
 	ch1 = *str1++; ch2 = *(unsigned char *) str2++ ;
 	if ( ch1!=ch2 || ch1=='\0' )
@@ -55,6 +64,15 @@ return( 0 );
 
 long uc_strmatch(const unichar_t *str1, const char *str2) {
     long ch1, ch2;
+    
+    /* Handle NULL pointer cases */
+    if ( str1==NULL && str2==NULL )
+        return 0;
+    if ( str1==NULL )
+        return -1;
+    if ( str2==NULL )
+        return 1;
+    
     for (;;) {
 	ch1 = *str1++; ch2 = *(unsigned char *) str2++ ;
 	ch1 = tolower(ch1);
@@ -78,6 +96,15 @@ return( 0 );
 
 long u_strnmatch(const unichar_t *str1, const unichar_t *str2, int len) {
     long ch1, ch2;
+    
+    /* Handle NULL pointer cases */
+    if ( str1==NULL && str2==NULL )
+        return 0;
+    if ( str1==NULL )
+        return -1;
+    if ( str2==NULL )
+        return 1;
+    
     for (;--len>=0;) {
 	ch1 = *str1++; ch2 = *str2++ ;
 	ch1 = tolower(ch1);
@@ -90,6 +117,15 @@ return( 0 );
 
 long u_strcmp(const unichar_t *str1,const unichar_t *str2) {
     long ch1, ch2;
+    
+    /* Handle NULL pointer cases */
+    if ( str1==NULL && str2==NULL )
+        return 0;
+    if ( str1==NULL )
+        return -1;
+    if ( str2==NULL )
+        return 1;
+    
     for (;;) {
 	ch1 = *str1++; ch2 = *str2++ ;
 	if ( ch1!=ch2 || ch1=='\0' )
@@ -99,6 +135,15 @@ return(ch1-ch2);
 
 long u_strncmp(const unichar_t *str1,const unichar_t *str2,int n) {
     long ch1, ch2;
+    
+    /* Handle NULL pointer cases */
+    if ( str1==NULL && str2==NULL )
+        return 0;
+    if ( str1==NULL )
+        return -1;
+    if ( str2==NULL )
+        return 1;
+    
     while ( --n>=0 ) {
 	ch1 = *str1++; ch2 = *str2++ ;
 	if ( ch1!=ch2 || ch1=='\0' )
@@ -109,6 +154,15 @@ return( 0 );
 
 long u_strmatch(const unichar_t *str1, const unichar_t *str2) {
     long ch1, ch2;
+    
+    /* Handle NULL pointer cases */
+    if ( str1==NULL && str2==NULL )
+        return 0;
+    if ( str1==NULL )
+        return -1;
+    if ( str2==NULL )
+        return 1;
+    
     for (;;) {
 	ch1 = *str1++; ch2 = *str2++ ;
 	ch1 = tolower(ch1);

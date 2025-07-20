@@ -23,3 +23,11 @@ The bug tracker is for _reporting bugs_, not for asking questions. Please direct
 [`setup_linux_deps.sh`](.github/workflows/scripts/setup_linux_deps.sh) &mdash; a list of installation dependencies
 
 [`CONTRIBUTING.md`](CONTRIBUTING.md) &mdash; contributing guidelines
+
+# 创建DMG磁盘映像
+
+hdiutil create -size 800m \
+    -volname "FontForge" \
+    -srcfolder "FontForge_Fixed_macOS_15.2.app" \
+    -ov -format UDBZ \
+    "FontForge-$(date +%Y-%m-%d)-Fixed-macOS-15.2.dmg"
