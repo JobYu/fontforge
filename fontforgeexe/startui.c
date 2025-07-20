@@ -241,6 +241,15 @@ static void SplashLayout() {
 
     uc_strcpy(pt," Version:");
     uc_strcat(pt,FONTFORGE_VERSION);
+    uc_strcat(pt,"-Modified (based on FontForge 20230101)");
+    pt += u_strlen(pt);
+    lines[linecnt++] = pt;
+
+    uc_strcpy(pt," ");
+    pt += u_strlen(pt);
+    lines[linecnt++] = pt;
+
+    uc_strcpy(pt," Modified with NULL pointer fixes and macOS 15.2 compatibility.");
     pt += u_strlen(pt);
     lines[linecnt++] = pt;
 
@@ -645,7 +654,7 @@ int fontforge_main( int argc, char **argv ) {
         fprintf( stderr, "Copyright (c) 2000-%d. See AUTHORS for Contributors.\n", modtime->tm_year+1900 );
         fprintf( stderr, " License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>\n" );
         fprintf( stderr, " with many parts BSD <http://fontforge.org/license.html>. Please read LICENSE.\n" );
-        fprintf( stderr, " Version: %s\n", FONTFORGE_VERSION );
+        fprintf( stderr, " Version: %s-Modified (based on FontForge 20230101)\n", FONTFORGE_VERSION );
         fprintf( stderr, " Based on sources from %s"
 	        "-ML"
 #ifdef FREETYPE_HAS_DEBUGGER

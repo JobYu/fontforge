@@ -108,7 +108,7 @@ int fontforge_main( int argc, char **argv ) {
         fprintf( stderr, "Copyright (c) 2000-%d. See AUTHORS for Contributors.\n", modtime->tm_year+1900 );
         fprintf( stderr, " License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>\n" );
         fprintf( stderr, " with many parts BSD <http://fontforge.org/license.html>. Please read LICENSE.\n" );
-        fprintf( stderr, " Version: %s\n", FONTFORGE_VERSION );
+        fprintf( stderr, " Version: %s-Modified (based on FontForge 20230101)\n", FONTFORGE_VERSION );
         fprintf( stderr, " Based on sources from %s"
 #ifdef FREETYPE_HAS_DEBUGGER
             "-TtfDb"

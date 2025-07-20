@@ -292,7 +292,9 @@ static bool DiscoverPlugins(int do_import) {
     PyObject *str, *str2, *iter, *tmp, *tmp2, *entrypoint;
     PyObject *pkgres = PyImport_ImportModule("pkg_resources");
     if (pkgres == NULL || !PyObject_HasAttrString(pkgres, "iter_entry_points")) {
-        LogError(_("Core python package 'pkg_resources' not found: Cannot discover plugins"));
+        /* Note: pkg_resources is not available. Plugin discovery is disabled.
+         * This is a normal condition when setuptools is not installed or
+         * when using a minimal Python environment. FontForge works fine without plugins. */
 	PyErr_Clear();
         return false;
     }
